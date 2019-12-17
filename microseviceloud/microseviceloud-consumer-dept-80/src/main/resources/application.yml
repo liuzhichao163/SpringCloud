@@ -1,0 +1,21 @@
+server:
+  port: 8004
+
+spring:
+   application:      #微服务在eureka里的名子(Application)
+    name: microservicecloud-consumer
+
+eureka:
+  client:   #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7002.com:7002/eureka/
+  instance:       #微服务在eureka里的别名(Status)
+    instance-id: microseviceloudProvider8004
+    prefer-ip-address: true           #访问路径可以显示IP地址信息
+
+    
+info:           #微服务info详情信息(点击微服务别名时展现)
+  app.name: atguigu-microservicecloud
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
